@@ -1,0 +1,203 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--navy-deep);
+  color: var(--white);
+  isolation: isolate;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  transform-origin: 50% 0%;
+  will-change: transform;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 55%;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(14, 27, 45, 0.75) 0%, rgba(14, 27, 45, 0.25) 30%, rgba(14, 27, 45, 0.55) 62%, rgba(14, 27, 45, 0.96) 100%),
+    linear-gradient(90deg, rgba(23, 43, 69, 0.9) 0%, rgba(23, 43, 69, 0.45) 55%, rgba(23, 43, 69, 0.2) 100%);
+}
+.hero .tech-grid {
+  z-index: -1;
+  opacity: 0.35;
+}
+
+.hero__inner {
+  position: relative;
+  padding-top: calc(var(--header-h) + 3rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+.hero__eyebrow {
+  color: var(--orange);
+  margin-bottom: 1.5rem;
+}
+.hero__title {
+  font-size: var(--fs-display);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  max-width: 13ch;
+}
+.hero__lead {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 44ch;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--on-dark-soft);
+}
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+@media (max-width: 479px) {
+  .hero__ctas .btn-wrap,
+  .hero__ctas .btn {
+    width: 100%;
+  }
+}
+
+.hero__bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+.hero__rule {
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: var(--line-dark);
+}
+.hero__rule::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88px;
+  height: 2px;
+  margin-top: -0.5px;
+  background: var(--orange);
+}
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-dark-soft);
+}
+.hero__tags li[aria-hidden] {
+  color: var(--orange);
+}
+.hero__scroll {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.hero__scroll-line {
+  position: relative;
+  width: 56px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--line-dark);
+}
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  animation: hero-scroll 2.4s var(--ease-in-out) infinite;
+}
+@keyframes hero-scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Especificação técnica lateral (desktop largo) */
+.hero__spec {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero__scroll {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__spec {
+    position: absolute;
+    right: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+    bottom: clamp(9rem, 16vh, 12rem);
+    display: block;
+    width: 250px;
+    padding: 1.25rem 1.25rem 1rem;
+    border: 1px solid var(--line-dark);
+    background: rgba(14, 27, 45, 0.45);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .hero__spec-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+  .hero__spec li {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--line-dark);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--on-dark-soft);
+  }
+  .hero__spec li:last-child {
+    color: var(--white);
+  }
+  .hero__spec li .mono {
+    font-size: 0.7rem;
+    color: var(--on-dark-mute);
+    padding-top: 0.1rem;
+  }
+}
+
+@media (max-height: 640px) and (min-width: 768px) {
+  .hero__title {
+    font-size: clamp(2.4rem, 9vh, 5rem);
+  }
+}

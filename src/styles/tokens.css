@@ -1,0 +1,70 @@
+:root {
+  /* Marca */
+  --navy: #172b45;
+  --navy-2: #294868;
+  --navy-deep: #0e1b2d;
+  --navy-ink: #0b1624;
+  --orange: #f47b20;
+  --orange-hot: #e9501e;
+  /* Laranja para títulos/destaques sobre fundo claro (contraste 3:1 para texto grande) */
+  --orange-strong: #dc640d;
+  /* Laranja escurecido para texto pequeno sobre branco (contraste AA) */
+  --orange-ink: #b4520e;
+  --white: #ffffff;
+  --gray-50: #f3f5f7;
+  --gray-100: #e7ebf0;
+  --gray-200: #d3dae3;
+  --gray-400: #8795a8;
+  --gray-500: #5f6d80;
+  --ink: #17212b;
+  --ink-soft: #3d4a5a;
+
+  /* Texto sobre fundo escuro */
+  --on-dark: #ffffff;
+  --on-dark-soft: rgba(255, 255, 255, 0.72);
+  --on-dark-mute: rgba(255, 255, 255, 0.5);
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --line-light: rgba(23, 43, 69, 0.12);
+
+  /* Tipografia */
+  --font-sans: 'Manrope Variable', 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --fs-display: clamp(2.45rem, 1.2rem + 6.4vw, 7.25rem);
+  --fs-h1: clamp(2.25rem, 1.4rem + 4.2vw, 5.25rem);
+  --fs-h2: clamp(2rem, 1.25rem + 3.2vw, 4.25rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.3125rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  /* Espaçamento */
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
+  --section-y: clamp(5rem, 3rem + 9vw, 11rem);
+  --container: 1440px;
+  --header-h: 76px;
+
+  /* Forma */
+  --radius-sm: 2px;
+  --radius: 4px;
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.5s;
+
+  /* Camadas */
+  --z-header: 50;
+  --z-float: 60;
+  --z-menu: 70;
+  --z-transition: 90;
+  --z-loader: 100;
+  --z-cursor: 110;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 88px;
+  }
+}

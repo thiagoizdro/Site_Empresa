@@ -1,0 +1,59 @@
+.contact {
+  position: relative;
+  background: var(--navy);
+  color: var(--white);
+  padding-block: var(--section-y);
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--line-dark) 1px, transparent 1px);
+  background-size: 25% 100%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.contact__grid {
+  position: relative;
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+.contact__info {
+  display: grid;
+  gap: 1.75rem;
+  align-content: start;
+}
+.contact__form {
+  scroll-margin-top: 1rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: var(--white);
+  color: var(--ink);
+  border-top: 3px solid var(--orange);
+}
+.contact__form-head {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line-light);
+}
+.contact__form-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange-ink);
+}
+.contact__form-title {
+  margin-top: 0.5rem;
+  font-size: var(--fs-h3);
+  color: var(--navy);
+}
+@media (min-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+    align-items: start;
+  }
+  .contact__info {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}

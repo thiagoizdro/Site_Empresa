@@ -1,0 +1,23 @@
+.bas__grid {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+.bas__text {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+.bas__note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+@media (min-width: 1024px) {
+  .bas__grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  }
+}

@@ -1,0 +1,85 @@
+.phero {
+  position: relative;
+  min-height: clamp(520px, 78svh, 820px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--navy-deep);
+  isolation: isolate;
+}
+.phero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.phero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.phero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(14, 27, 45, 0.7) 0%, rgba(14, 27, 45, 0.45) 40%, rgba(14, 27, 45, 0.95) 100%),
+    linear-gradient(90deg, rgba(23, 43, 69, 0.85), rgba(23, 43, 69, 0.3));
+}
+.phero .tech-grid {
+  z-index: -1;
+  opacity: 0.3;
+}
+.phero__inner {
+  display: grid;
+  gap: 1.25rem;
+  padding-top: calc(var(--header-h) + 3rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+.phero .eyebrow {
+  color: var(--orange);
+}
+.phero__title {
+  font-size: var(--fs-h1);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  max-width: 18ch;
+}
+.phero__lead {
+  max-width: 54ch;
+  color: var(--on-dark-soft);
+}
+.phero__extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.crumbs a {
+  transition: color 0.3s;
+}
+.crumbs a:hover {
+  color: var(--white);
+}
+.crumbs [aria-current] {
+  color: var(--on-dark-soft);
+}

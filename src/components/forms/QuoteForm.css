@@ -1,0 +1,401 @@
+.qform {
+  position: relative;
+}
+.qform__form {
+  display: grid;
+  gap: 1.35rem;
+}
+.qform__row {
+  display: grid;
+  gap: 1.35rem;
+}
+@media (min-width: 640px) {
+  .qform__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Campo */
+.field {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.field__label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+}
+.field__opt {
+  font-weight: 500;
+  color: var(--gray-500);
+}
+.field__req {
+  color: var(--orange-ink);
+}
+.field__control {
+  position: relative;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 0.9rem 2.75rem 0.9rem 1rem;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background-color 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.55;
+}
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23172B45' stroke-width='1.8'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 3rem;
+}
+.field select:invalid,
+.field select option[value=''] {
+  color: var(--gray-500);
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--gray-400);
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--gray-400);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(244, 123, 32, 0.28);
+}
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #c2361b;
+  background: #fff8f6;
+}
+.field.is-valid input,
+.field.is-valid select,
+.field.is-valid textarea {
+  border-color: #2d8a5a;
+}
+.field__state {
+  position: absolute;
+  top: 17px;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.field select ~ .field__state {
+  right: 2.4rem;
+}
+.field__state svg {
+  width: 20px;
+  height: 20px;
+}
+.field.has-error .field__state {
+  color: #c2361b;
+}
+.field.is-valid .field__state {
+  color: #2d8a5a;
+}
+.field__msg {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #b3301a;
+}
+.field__hint {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+/* Chips de tipo de imóvel */
+.qform__chips {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.qform__chips legend {
+  padding: 0;
+  margin-bottom: 0.6rem;
+}
+.qform__chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.qform__chip {
+  position: relative;
+}
+.qform__chip input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+}
+.qform__chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  background: var(--white);
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.2s;
+}
+.qform__chip:hover span {
+  border-color: var(--navy);
+}
+.qform__chip input:checked + span {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.qform__chip input:focus-visible + span {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+.qform__chip input:active + span {
+  transform: scale(0.96);
+}
+.qform__chips.has-error .qform__chip span {
+  border-color: #c2361b;
+}
+
+/* Upload */
+.qform__upload {
+  display: grid;
+  gap: 0.6rem;
+}
+.qform__drop {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  border: 1.5px dashed var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s;
+}
+.qform__drop:hover,
+.qform__drop.is-over,
+.qform__drop:focus-within {
+  border-color: var(--orange);
+  background: #fff6ee;
+}
+.qform__drop:focus-within {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+.qform__drop-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--orange-ink);
+  transition: transform 0.5s var(--ease-out);
+}
+.qform__drop:hover .qform__drop-icon {
+  transform: translateY(-3px);
+}
+.qform__drop-title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--navy);
+}
+.qform__drop-hint {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+}
+.qform__previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 0.6rem;
+}
+.qform__preview {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--gray-100);
+  animation: qf-pop 0.45s var(--ease-out);
+}
+@keyframes qf-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+.qform__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.qform__preview-size {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.6rem;
+  color: var(--white);
+  background: rgba(14, 27, 45, 0.75);
+}
+.qform__preview button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(14, 27, 45, 0.85);
+  color: var(--white);
+  transition: background-color 0.3s;
+}
+.qform__preview button:hover {
+  background: #c2361b;
+}
+.qform__preview button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Consentimento */
+.qform__consent {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+.qform__consent input {
+  width: 20px;
+  height: 20px;
+  margin: 0.1rem 0 0;
+  accent-color: var(--navy);
+}
+.qform__consent.has-error {
+  color: #b3301a;
+}
+.qform__policy {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-underline-offset: 3px;
+}
+
+.qform__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 0.5rem;
+}
+.qform__note {
+  flex: 1 1 220px;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+@media (max-width: 479px) {
+  .qform__submit .btn-wrap,
+  .qform__submit .btn {
+    width: 100%;
+  }
+}
+
+/* Resultado */
+.qform__result {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background: var(--gray-50);
+  border-top: 3px solid #2d8a5a;
+}
+.qform__result--error {
+  border-color: #c2361b;
+}
+.qform__result-icon {
+  width: 44px;
+  height: 44px;
+  color: #2d8a5a;
+}
+.qform__result--error .qform__result-icon {
+  color: #c2361b;
+}
+.qform__result h3 {
+  font-size: var(--fs-h3);
+  color: var(--navy);
+}
+.qform__result p {
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+.qform__notice {
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--orange);
+  background: var(--white);
+  font-size: 0.9375rem;
+}
+.qform__result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.qform__again {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--navy);
+}
+.qform__again:hover {
+  color: var(--orange-ink);
+}
+.qform__result:focus { outline: none; }
+.qform__result,
+.qform__form {
+  animation: qf-in 0.5s var(--ease-out);
+}
+@keyframes qf-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

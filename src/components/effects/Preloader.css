@@ -1,0 +1,85 @@
+.pl {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: grid;
+  place-items: center;
+  pointer-events: all;
+}
+.pl__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background: var(--navy);
+}
+.pl__panel--top {
+  top: 0;
+}
+.pl__panel--bottom {
+  bottom: 0;
+}
+.pl__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--orange);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 1;
+}
+.pl__center {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+/* símbolo acima da linha, nome abaixo */
+.pl__mark {
+  position: absolute;
+  left: 50%;
+  bottom: calc(50% + 26px);
+  width: clamp(96px, 16vw, 140px);
+  transform: translateX(-50%);
+}
+.pl__mark path {
+  transform-box: fill-box;
+}
+.pl__title {
+  position: absolute;
+  top: calc(50% + 22px);
+  left: 0;
+  right: 0;
+  justify-content: center;
+  display: flex;
+  gap: 0.5em;
+  font-weight: 800;
+  font-size: clamp(0.95rem, 0.8rem + 0.6vw, 1.2rem);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-left: 0.34em;
+}
+.pl__mask {
+  display: inline-block;
+  overflow: hidden;
+}
+.pl__word {
+  display: inline-block;
+}
+.pl__word--accent {
+  color: var(--orange);
+}
+
+/* Segurança: se o JavaScript falhar, o splash pré-renderizado some sozinho */
+html[data-prerendered] .pl {
+  animation: pl-failsafe 0.5s 7s forwards;
+}
+@keyframes pl-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

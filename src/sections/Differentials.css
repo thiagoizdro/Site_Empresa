@@ -1,0 +1,118 @@
+.diff {
+  overflow: hidden;
+}
+.diff__watermark {
+  position: absolute;
+  right: -8%;
+  top: 6%;
+  width: min(62vw, 820px);
+  opacity: 0.035;
+  pointer-events: none;
+}
+.diff__grid {
+  display: grid;
+  border-top: 1px solid var(--line-dark);
+  border-left: 1px solid var(--line-dark);
+}
+@media (min-width: 640px) {
+  .diff__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .diff__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.diff__item {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  padding: clamp(1.5rem, 2.6vw, 2.5rem);
+  border-right: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  transition: background-color 0.6s var(--ease-out);
+}
+.diff__line {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out);
+}
+.diff__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .diff__item {
+    min-height: 300px;
+  }
+  .diff__top {
+    margin-bottom: auto;
+    padding-bottom: 2.5rem;
+  }
+}
+.diff__n {
+  font-size: 0.75rem;
+  color: var(--on-dark-mute);
+  transition: color 0.4s;
+}
+.diff__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  color: var(--orange);
+  transition:
+    transform 0.6s var(--ease-out),
+    background-color 0.5s,
+    color 0.5s,
+    border-color 0.5s;
+}
+.diff__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.diff__title {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  transition: transform 0.6s var(--ease-out);
+}
+.diff__text {
+  color: var(--on-dark-soft);
+  font-size: 0.9375rem;
+  max-width: 36ch;
+  transition: transform 0.6s var(--ease-out);
+}
+@media (hover: hover) {
+  .diff__item:hover {
+    background: rgba(41, 72, 104, 0.45);
+  }
+  .diff__item:hover .diff__line {
+    transform: scaleX(1);
+  }
+  .diff__item:hover .diff__n {
+    color: var(--orange);
+  }
+  .diff__item:hover .diff__icon {
+    transform: rotate(-12deg) scale(1.06);
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--navy);
+  }
+  .diff__item:hover .diff__title,
+  .diff__item:hover .diff__text {
+    transform: translateX(6px);
+  }
+}

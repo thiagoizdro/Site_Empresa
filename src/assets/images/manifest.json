@@ -1,0 +1,137 @@
+{
+  "antes": {
+    "lg": 1600,
+    "ratio": 1.7778,
+    "sm": 800
+  },
+  "cta-obra": {
+    "lg": 1920,
+    "ratio": 1.7778,
+    "sm": 1000
+  },
+  "depois": {
+    "lg": 1920,
+    "ratio": 1.7778,
+    "sm": 1000
+  },
+  "hero-manta": {
+    "lg": 1920,
+    "ratio": 1.6,
+    "sm": 1000
+  },
+  "pagina-contato": {
+    "lg": 1600,
+    "ratio": 1.7778,
+    "sm": 800
+  },
+  "pagina-empresa": {
+    "lg": 1920,
+    "ratio": 1.7778,
+    "sm": 1000
+  },
+  "pagina-projetos": {
+    "lg": 1600,
+    "ratio": 1.4939,
+    "sm": 800
+  },
+  "pagina-servicos": {
+    "lg": 1920,
+    "ratio": 1.7778,
+    "sm": 1000
+  },
+  "processo-primer": {
+    "lg": 1100,
+    "ratio": 0.5624,
+    "sm": 600
+  },
+  "projeto-01": {
+    "lg": 1600,
+    "ratio": 1.5094,
+    "sm": 800
+  },
+  "projeto-02": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "projeto-03": {
+    "lg": 1100,
+    "ratio": 0.5624,
+    "sm": 600
+  },
+  "projeto-04": {
+    "lg": 1600,
+    "ratio": 1.7778,
+    "sm": 800
+  },
+  "projeto-05": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "projeto-06": {
+    "lg": 1100,
+    "ratio": 0.6667,
+    "sm": 600
+  },
+  "projeto-07": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "servico-areas-molhadas": {
+    "lg": 1100,
+    "ratio": 0.6671,
+    "sm": 600
+  },
+  "servico-estruturas": {
+    "lg": 1600,
+    "ratio": 1.25,
+    "sm": 800
+  },
+  "servico-infiltracoes": {
+    "lg": 1600,
+    "ratio": 1.7778,
+    "sm": 800
+  },
+  "servico-lajes": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "servico-manta": {
+    "lg": 1100,
+    "ratio": 0.5624,
+    "sm": 600
+  },
+  "servico-piscinas": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "servico-reservatorios": {
+    "lg": 1100,
+    "ratio": 0.5592,
+    "sm": 600
+  },
+  "servico-telhados": {
+    "lg": 1600,
+    "ratio": 1.4995,
+    "sm": 800
+  },
+  "sobre-aplicacao": {
+    "lg": 1100,
+    "ratio": 0.5624,
+    "sm": 600
+  },
+  "sobre-detalhe": {
+    "lg": 1100,
+    "ratio": 0.5624,
+    "sm": 600
+  },
+  "textura-fissura": {
+    "lg": 1600,
+    "ratio": 1.5038,
+    "sm": 800
+  }
+}

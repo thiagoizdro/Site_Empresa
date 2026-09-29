@@ -1,0 +1,131 @@
+.sdet__grid {
+  display: grid;
+  gap: 3rem;
+}
+.sdet__main {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+.sdet__title {
+  margin-bottom: 0.5rem;
+}
+.sdet__p {
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+.sdet__consider {
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-light);
+}
+.sdet__h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.25rem;
+}
+.sdet__h3 svg {
+  width: 22px;
+  height: 22px;
+  color: var(--orange-ink);
+  flex: none;
+}
+.sdet__consider ol {
+  display: grid;
+  gap: 0;
+}
+@media (min-width: 640px) {
+  .sdet__consider ol {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+.sdet__consider li {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line-light);
+  font-weight: 600;
+}
+.sdet__consider li .mono {
+  font-size: 0.72rem;
+  color: var(--orange-ink);
+  padding-top: 0.2rem;
+}
+
+.sdet__card {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--navy);
+  color: var(--white);
+  border-top: 3px solid var(--orange);
+}
+.sdet__card-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.sdet__card ul {
+  display: grid;
+  gap: 0.9rem;
+}
+.sdet__card li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--on-dark-soft);
+}
+.sdet__card li svg {
+  width: 20px;
+  height: 20px;
+  color: var(--orange);
+}
+.sdet__disclaimer {
+  font-size: 0.8125rem;
+  color: var(--on-dark-mute);
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-dark);
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .sdet__grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+    gap: 5rem;
+    align-items: start;
+  }
+  .sdet__aside {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}
+
+.related__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.related__title {
+  font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.25rem);
+}
+.related__grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .related__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .related__grid .scard__link {
+    min-height: 420px;
+  }
+}

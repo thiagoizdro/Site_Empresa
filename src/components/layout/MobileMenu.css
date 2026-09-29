@@ -1,0 +1,112 @@
+.mmenu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  background: var(--navy-deep);
+  color: var(--white);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  clip-path: inset(0% 0% 100% 0%);
+  transition: clip-path 0.55s var(--ease-in-out) 0.1s;
+}
+.mmenu.is-open {
+  clip-path: inset(0% 0% 0% 0%);
+  transition-delay: 0s;
+}
+/* Itens entram em sequência */
+.mmenu__item,
+.mmenu__foot {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s var(--ease-out);
+}
+.mmenu.is-open .mmenu__item,
+.mmenu.is-open .mmenu__foot {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+  transition-delay: calc(0.2s + var(--i, 0) * 0.05s);
+}
+.mmenu.is-open .mmenu__foot {
+  transition-delay: 0.55s;
+}
+.mmenu__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, var(--line-dark) 1px, transparent 1px);
+  background-size: 25% 100%;
+  opacity: 0.45;
+}
+.mmenu__inner {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-top: calc(var(--header-h) + 1.5rem);
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+.mmenu__list {
+  display: grid;
+}
+.mmenu__link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  font-size: clamp(1.75rem, 8vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-dark);
+  transition:
+    color 0.3s,
+    padding 0.4s var(--ease-out);
+}
+.mmenu__link:hover,
+.mmenu__link:focus-visible {
+  padding-left: 0.5rem;
+}
+.mmenu__link.is-active {
+  color: var(--orange);
+}
+.mmenu__n {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  transform: translateY(-0.9em);
+}
+.mmenu__foot {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+.mmenu__wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: var(--on-dark-soft);
+}
+.mmenu__wa:hover {
+  color: var(--white);
+}
+@media (max-height: 560px) {
+  .mmenu__link {
+    font-size: 1.5rem;
+    padding: 0.35rem 0;
+  }
+}
+@media (min-width: 1180px) {
+  .mmenu {
+    display: none;
+  }
+}

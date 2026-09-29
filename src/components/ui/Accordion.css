@@ -1,0 +1,118 @@
+.acc {
+  border-top: 1px solid var(--line-light);
+}
+.acc__item {
+  position: relative;
+  border-bottom: 1px solid var(--line-light);
+}
+.acc__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out);
+}
+.acc__item.is-open::before {
+  transform: scaleX(1);
+}
+.acc__heading {
+  font-size: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+}
+.acc__btn {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1.6rem 0;
+  text-align: left;
+}
+.acc__n {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  transition: color 0.3s;
+}
+.acc__q {
+  font-size: clamp(1.0625rem, 1rem + 0.45vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  transition:
+    color 0.3s,
+    transform 0.45s var(--ease-out);
+}
+.acc__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line-light);
+  border-radius: 50%;
+  transition:
+    transform 0.5s var(--ease-out),
+    background-color 0.35s,
+    border-color 0.35s,
+    color 0.35s;
+}
+.acc__icon svg {
+  width: 18px;
+  height: 18px;
+}
+@media (hover: hover) {
+  .acc__btn:hover .acc__q {
+    transform: translateX(4px);
+  }
+  .acc__btn:hover .acc__icon {
+    border-color: var(--navy);
+  }
+}
+.acc__item.is-open .acc__n {
+  color: var(--orange-ink);
+}
+.acc__item.is-open .acc__icon {
+  transform: rotate(45deg);
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--navy);
+}
+.acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s var(--ease-out);
+}
+.acc__item.is-open .acc__panel {
+  grid-template-rows: 1fr;
+}
+.acc__inner {
+  overflow: hidden;
+}
+.acc__inner p {
+  max-width: 62ch;
+  padding: 0 3.5rem 1.75rem calc(1.25rem + 2ch);
+  color: var(--ink-soft);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.4s,
+    transform 0.5s var(--ease-out);
+}
+.acc__item.is-open .acc__inner p {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.1s;
+}
+@media (max-width: 639px) {
+  .acc__inner p {
+    padding: 0 0 1.5rem;
+  }
+  .acc__btn {
+    gap: 0.9rem;
+  }
+}

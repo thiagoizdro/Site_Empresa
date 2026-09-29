@@ -1,0 +1,25 @@
+.services__grid {
+  display: grid;
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+}
+@media (min-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .services__grid > .scard {
+    grid-column: span 5;
+  }
+  .services__grid > .scard--wide {
+    grid-column: span 7;
+  }
+}
+.services__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}

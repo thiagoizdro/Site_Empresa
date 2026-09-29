@@ -1,0 +1,23 @@
+.shead {
+  display: grid;
+  gap: 1.75rem;
+  margin-bottom: clamp(2.75rem, 5vw, 5rem);
+}
+.shead__main {
+  display: grid;
+  gap: 1.5rem;
+}
+.shead__side {
+  display: grid;
+  gap: 1.5rem;
+  align-content: end;
+  justify-items: start;
+  max-width: 52ch;
+}
+@media (min-width: 1024px) {
+  .shead {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 4rem;
+  }
+}

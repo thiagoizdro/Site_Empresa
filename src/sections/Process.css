@@ -1,0 +1,165 @@
+.process {
+  position: relative;
+  background: var(--white);
+  padding-block: var(--section-y);
+}
+.process__timeline {
+  position: relative;
+}
+
+/* ---------- Mobile / tablet: vertical ---------- */
+.process__track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 23px;
+  width: 2px;
+  background: var(--gray-100);
+}
+.process__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  transform-origin: top left;
+}
+.process__list {
+  display: grid;
+  gap: 2.75rem;
+}
+.process__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.35rem;
+}
+.process__node {
+  grid-row: 1 / 4;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  color: var(--gray-400);
+  transition:
+    background-color 0.5s var(--ease-out),
+    border-color 0.5s var(--ease-out),
+    color 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
+}
+.process__node svg {
+  width: 20px;
+  height: 20px;
+}
+.process__n {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--gray-500);
+  padding-top: 0.2rem;
+  transition: color 0.4s;
+}
+.process__title {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  transition: color 0.5s var(--ease-out);
+}
+.process__text {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  max-width: 38ch;
+}
+.process__step.is-done .process__node {
+  border-color: var(--orange);
+  color: var(--navy);
+}
+.process__step.is-current .process__node {
+  background: var(--orange);
+  transform: scale(1.08);
+}
+.process__step.is-done .process__title {
+  color: var(--navy);
+}
+.process__step.is-done .process__n {
+  color: var(--orange-ink);
+}
+
+/* ---------- Desktop: horizontal + sticky ---------- */
+@media (min-width: 1024px) {
+  .process {
+    height: 260vh;
+    padding: 0;
+  }
+  .process__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .process__inner {
+    padding-top: var(--header-h);
+  }
+  .process__track {
+    top: 23px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 2px;
+  }
+  .process__list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .process__step {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+  }
+  .process__node {
+    grid-row: auto;
+    margin-bottom: 1.25rem;
+  }
+  /* caixa normal para caber palavras longas ("Impermeabilização") em 5 colunas */
+  .process__title {
+    font-size: clamp(1.05rem, 0.4rem + 0.95vw, 1.4rem);
+    text-transform: none;
+    letter-spacing: -0.025em;
+  }
+  /* Etapas futuras ficam em cinza (contraste AA mantido) e ganham cor ao serem alcançadas */
+  .process__text {
+    color: var(--gray-500);
+    transform: translateY(6px);
+    transition:
+      color 0.6s var(--ease-out),
+      transform 0.6s var(--ease-out);
+  }
+  .process__step.is-done .process__text {
+    color: var(--ink-soft);
+    transform: none;
+  }
+}
+@media (min-width: 1024px) and (max-height: 720px) {
+  .process .shead {
+    margin-bottom: 2rem;
+  }
+  .process .title-xl {
+    font-size: clamp(2rem, 6vh, 3.25rem);
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 1024px) {
+  .process {
+    height: auto;
+    padding-block: var(--section-y);
+  }
+  .process__sticky {
+    position: static;
+    height: auto;
+  }
+}
